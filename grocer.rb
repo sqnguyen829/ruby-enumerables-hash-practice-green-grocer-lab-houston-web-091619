@@ -1,3 +1,78 @@
+
+def consolidate_cart(cart)
+  # code here
+  new_cart = {}
+  cart.each do |item|
+    current_item = item.keys.first
+    if new_cart.include?(current_item)
+      new_cart[current_item][:count] += 1 
+    else 
+      new_cart[current_item] = item[current_item]
+      new_cart[current_item][:count] = 1
+    end
+  end
+  new_cart
+    
+end
+
+def apply_coupons(cart, coupons)
+  # code here
+   new_cart = {}
+  cart.each do |elem|
+    first = elem.keys.first
+    if new_cart.include?(first)
+      new_cart[first][:count] += 1
+    else
+      new_cart[first] = elem[first] 
+      new_cart[first][:count] = 1 
+    end
+  end
+  new_cart
+end
+
+def apply_clearance(cart)
+  # code here
+end
+
+def checkout(cart, coupons)
+  # code here
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=begin
+
+
 def consolidate_cart(cart)
   new_cart = {}
   cart.each do |elem|
@@ -70,3 +145,5 @@ grocery_cart = [
 
 new_grocery_cart = consolidate_cart(grocery_cart)
 p apply_coupons(new_grocery_cart, coupons)
+
+=end
